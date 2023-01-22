@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+
+import Nav from "./components/head";
+import NavBar from "./components/nav";
+import Slider from "./components/slider";
+import Courses from "./components/courses";
+import Person from "./components/person";
+
+
+export default function App() {
+  var title;
+  var loggedIn = false;
+  loggedIn = sessionStorage.getItem("token");
+  if (loggedIn) {
+    title = "Logout";
+  }
+  else {
+    title = "Login";
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Nav Title={title} />
+      <NavBar Title={title} /><br></br>
+      <Slider/>
+      <br></br><br></br><br></br>
+      <Person />
+      <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+      <Courses />
+     
+    </BrowserRouter>
   );
 }
-
-export default App;

@@ -1,0 +1,15 @@
+.logo {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    padding: 10px;
+    margin-left: 20%;
+}
+.heading {
+    text-shadow: 2px 2px skyblue;
+    font-size: 3vw;
+    display: inline-block;
+    font-size: 30px;
+    padding-left: 2%;
+    text-align: center;
+}
